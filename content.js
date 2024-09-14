@@ -29,11 +29,6 @@ function replaceEditor(editor) {
         return;
     }
     console.log("Replacing editor...");
-    // if (typeof monaco == "undefined") {
-    //     setTimeout(() => {
-    //         replaceEditor(editor);
-    //     }, 3000);
-    // }
 
     // Create a new container for the Monaco editor
     const newEditorContainer = document.createElement("div");
@@ -46,14 +41,13 @@ function replaceEditor(editor) {
 
     // Get the content from the original editor (if needed)
     const originalContent =
-        editor.textContent ||
         "// Hello World\n // Can you see me?\n class Solution:\n def function():";
 
     // Initialize the new Monaco editor
     const newEditor = monaco.editor.create(newEditorContainer, {
         value: originalContent,
-        language: "python", // Set the appropriate language
-        theme: "vs-dark", // You can change the theme as needed
+        language: "python",
+        theme: "vs-dark",
         automaticLayout: true,
         minimap: { enabled: false },
     });
