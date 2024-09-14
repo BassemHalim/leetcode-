@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Leetcode++",
+    "description": "Enhancer for leetcode code editor which allows autocomplete",
+    "version": "0.1",
+    "content_scripts": [
+        {
+            "matches": ["https://leetcode.com/problems/*"],
+            "js": ["inject_scripts.js"],
+            "run_at": "document_start"
+        },
+        {
+            "matches": ["https://leetcode.com/problems/*"],
+            "js": [
+                "inject_editor.js",
+                "monaco-editor/min/vs/basic-languages/python/python.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["monaco-editor/min/vs/**", "content.js"],
+            "matches": ["https://leetcode.com/*"]
+        }
+    ]
+}
