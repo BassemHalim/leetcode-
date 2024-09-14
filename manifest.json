@@ -6,20 +6,12 @@
     "content_scripts": [
         {
             "matches": ["https://leetcode.com/problems/*"],
-            "js": ["inject_scripts.js"],
-            "run_at": "document_start"
-        },
-        {
-            "matches": ["https://leetcode.com/problems/*"],
-            "js": [
-                "inject_editor.js",
-                "monaco-editor/min/vs/basic-languages/python/python.js"
-            ]
+            "js": ["inject_editor.js"]
         }
     ],
     "web_accessible_resources": [
         {
-            "resources": ["monaco-editor/min/vs/**", "content.js"],
+            "resources": ["content.js"],
             "matches": ["https://leetcode.com/*"]
         }
     ]
